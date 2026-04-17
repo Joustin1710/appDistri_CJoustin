@@ -1,0 +1,39 @@
+# --- [ .NET / C# ] ---
+# Ignora carpetas de compilación en cualquier nivel del proyecto
+**/[Bb]in/
+**/[Oo]bj/
+# Archivos de configuración de usuario y secretos
+appsettings.Development.json
+*.user
+*.suo
+.vs/
+.vscode/
+
+# --- [ Python (appPy) ] ---
+# Ignora entornos virtuales y caché de ejecución
+**/__pycache__/
+**/env/
+**/venv/
+**/ENV/
+*.py[cod]
+*.egg-info/
+
+# --- [ Java (appJava) ] ---
+# Ignorar archivos generados por Maven o Gradle
+**/target/
+**/build/
+**/.gradle/
+*.class
+*.jar
+
+# --- [ Docker & Bases de Datos ] ---
+# Ignora archivos temporales de BD y configuración local de Docker
+*.db
+*.db-journal
+*.db-shm
+*.db-wal
+.dockerignore
+
+# --- [ Archivos del Sistema ] ---
+.DS_Store
+Thumbs.db

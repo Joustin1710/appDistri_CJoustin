@@ -1,0 +1,69 @@
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace app.clientesMendoza.entities.models
+{
+    public class EntityBase
+    {
+        [Key]
+
+        public int id { get; set; }
+        public bool Estado { get; set; }
+        public DateTime Fecha { get; set; }
+    }
+
+    public class Cliente : EntityBase
+    {
+        [Required]
+        [StringLength(30)]
+        public string? Nombre { get; set; }
+
+        [Required]
+        [StringLength(30)]
+        public string? Apellido { get; set; }
+
+        [Required]
+        [StringLength(50)]
+        public string? Email { get; set; }
+
+        [Required]
+        [StringLength(10)]
+        public string? CedulaIdentidad { get; set; }
+
+        [Required]
+        public DateTime? FechaNacimiento { get; set; }
+
+        [StringLength(15)]
+        public string? Telefono { get; set; }
+
+
+        public ICollection<DireccionCliente>? Direcciones { get; set; }
+    }
+
+    public class DireccionCliente : EntityBase
+    {
+        [Required]
+        public int ClienteId { get; set; }
+
+        [Required]
+        [StringLength(50)]
+        public string? Provincia { get; set; }
+
+        [Required]
+        [StringLength(50)]
+        public string? Ciudad { get; set; }
+
+        [Required]
+        [StringLength(150)]
+        public string? Doreccion { get; set; }
+
+        [StringLength(10)]
+        public string? CodigoPostal { get; set; }
+
+        public Cliente? Cliente { get; set; }
+    }
+}

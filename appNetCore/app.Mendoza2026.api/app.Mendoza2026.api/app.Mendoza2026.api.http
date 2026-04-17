@@ -1,0 +1,6 @@
+@app.Mendoza2026.api_HostAddress = http://localhost:5004
+
+GET {{app.Mendoza2026.api_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
