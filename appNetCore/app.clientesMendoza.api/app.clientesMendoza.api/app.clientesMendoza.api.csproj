@@ -16,6 +16,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\app.clientesMendoza.dataAccess\app.clientesMendoza.dataAccess.csproj" />
+    <ProjectReference Include="..\app.clientesMendoza.services\app.clientesMendoza.services.csproj" />
   </ItemGroup>
 
 </Project>

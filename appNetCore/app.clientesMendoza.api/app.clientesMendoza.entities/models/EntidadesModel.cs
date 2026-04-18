@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.ComponentModel.DataAnnotations;
 
 namespace app.clientesMendoza.entities.models
 {
@@ -11,7 +6,7 @@ namespace app.clientesMendoza.entities.models
     {
         [Key]
 
-        public int id { get; set; }
+        public int Id { get; set; }
         public bool Estado { get; set; }
         public DateTime Fecha { get; set; }
     }
@@ -42,6 +37,8 @@ namespace app.clientesMendoza.entities.models
 
 
         public ICollection<DireccionCliente>? Direcciones { get; set; }
+        public object Edad { get; set; }
+        public object Activo { get; set; }
     }
 
     public class DireccionCliente : EntityBase
@@ -59,7 +56,7 @@ namespace app.clientesMendoza.entities.models
 
         [Required]
         [StringLength(150)]
-        public string? Doreccion { get; set; }
+        public string? Direccion { get; set; }
 
         [StringLength(10)]
         public string? CodigoPostal { get; set; }

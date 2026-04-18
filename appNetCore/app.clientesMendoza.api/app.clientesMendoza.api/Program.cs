@@ -1,4 +1,5 @@
 using app.clientesMendoza.dataAccess.context;
+using app.clientesMendoza.dataAccess.Repositories;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -16,6 +17,14 @@ builder.Services.AddDbContext<AppDbContext>(options =>
     options.UseSqlServer(conSqlServer);
     options.LogTo(Console.WriteLine, LogLevel.Information).EnableSensitiveDataLogging();
 });
+
+builder.Services.Configure<RabbitMQSettings>(builder.Configuration.GetSection("rabbitmq"));
+
+builder.Services.AddScoped<IClienteRepository, ClienteRepository>();
+builder.Services.AddScoped<IDireccionClienteRepository, DireccionClienteRepository>();
+
+builder.Services.AddSinleton<IRabbitMQService, RabbitMQService>();
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.

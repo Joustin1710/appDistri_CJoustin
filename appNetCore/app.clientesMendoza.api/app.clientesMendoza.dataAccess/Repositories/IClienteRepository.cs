@@ -1,12 +1,20 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using app.clientesMendoza.entities.models;
 
 namespace app.clientesMendoza.dataAccess.Repositories
 {
-    internal interface IClienteRepository
+    public interface IClienteRepository
     {
+
+        Task<Cliente> GetCLiente( int id);
+
+        Task<Cliente> CreateCliente(Cliente cliente);
+
+        Task<List<Cliente>> GetClientes();
+
+        Task UpdateCliente(Cliente cliente);
+
+        Task DeleteCliente(int id);
+
+
     }
 }

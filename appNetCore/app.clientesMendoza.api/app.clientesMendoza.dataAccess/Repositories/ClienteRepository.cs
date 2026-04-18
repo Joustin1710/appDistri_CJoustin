@@ -1,6 +1,5 @@
 ﻿using app.clientesMendoza.dataAccess.context;
 using app.clientesMendoza.entities.models;
-using Microsoft.Identity.Client;
 
 namespace app.clientesMendoza.dataAccess.Repositories
 {
@@ -13,27 +12,27 @@ namespace app.clientesMendoza.dataAccess.Repositories
 
         public async Task<Cliente> CreateCliente(Cliente cliente)
         {
-            await InsertEntity(cliente);
+            return await InsertEntity(cliente);
         }
 
-        public Task<Cliente> DeleteCliente(int id)
+        public async Task DeleteCliente(int id)
         {
-            throw new NotImplementedException();
+            await DeleteEntity(id);
         }
 
-        public Task<Cliente> GetCLiente(int id)
+        public async Task<Cliente> GetCLiente(int id)
         {
-            throw new NotImplementedException();
+            return await SelectEntity(id);
         }
 
-        public Task<Cliente> GetClientes()
+        public async Task<List<Cliente>> GetClientes()
         {
-            throw new NotImplementedException();
+            return await SelectEntitiesAll();
         }
 
-        public Task<Cliente> UpdateCliente(Cliente cliente)
+        public async Task UpdateCliente(Cliente cliente)
         {
-            throw new NotImplementedException();
+            await UpdateEntity(cliente);
         }
     }
         

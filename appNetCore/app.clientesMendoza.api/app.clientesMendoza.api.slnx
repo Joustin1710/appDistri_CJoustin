@@ -1,5 +1,6 @@
 <Solution>
   <Project Path="app.clientesMendoza.api/app.clientesMendoza.api.csproj" />
+  <Project Path="app.clientesMendoza.common/app.clientesMendoza.common.csproj" />
   <Project Path="app.clientesMendoza.dataAccess/app.clientesMendoza.dataAccess.csproj" />
   <Project Path="app.clientesMendoza.entities/app.clientesMendoza.entities.csproj" />
   <Project Path="app.clientesMendoza.services/app.clientesMendoza.services.csproj" />

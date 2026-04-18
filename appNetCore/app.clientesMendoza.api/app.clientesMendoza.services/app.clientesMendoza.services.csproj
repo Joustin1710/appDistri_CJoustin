@@ -8,6 +8,12 @@
 
   <ItemGroup>
     <ProjectReference Include="..\app.clientesMendoza.common\app.clientesMendoza.common.csproj" />
+    <ProjectReference Include="..\app.clientesMendoza.dataAccess\app.clientesMendoza.dataAccess.csproj" />
+    <ProjectReference Include="..\app.clientesMendoza.entities\app.clientesMendoza.entities.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="EventMQ\" />
   </ItemGroup>
 
 </Project>

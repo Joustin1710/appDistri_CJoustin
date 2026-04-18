@@ -40,7 +40,7 @@ namespace app.clientesMendoza.dataAccess
         }
 
 
-        public async Task<TEntityBase> UpdateEntity(TEntityBase entity)
+        public async Task UpdateEntity(TEntityBase entity)
         {
             _context.Set<TEntityBase>().Attach(entity);
             _context.Entry(entity).State = EntityState.Modified;
@@ -49,8 +49,16 @@ namespace app.clientesMendoza.dataAccess
         }
 
 
+        public async Task DeleteEntity(int id)
+        {
+            var entity = await _context.Set<TEntityBase>().SingleOrDefaultAsync(p => p.Id == id && p!.Estado);
 
+            if (entity == null) return;
+            
+            _context.Set<TEntityBase>().Attach(entity);
+            _context.Entry(entity).State = EntityState.Deleted;
+            await _context.SaveChangesAsync();
 
-
+        }
     }
 }
